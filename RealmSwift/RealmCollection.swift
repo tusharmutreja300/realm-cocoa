@@ -179,12 +179,12 @@ private func forceCast<A, U>(_ from: A, to type: U.Type) -> U {
     return from as! U
 }
 
-/// A type which can be stored in a Realm List, MutableSet, or Results.
+/// A type which can be stored in a Realm List, MutableSet, Map, or Results.
 ///
-/// Declaring additional types as conforming to this protocol will not make them
-/// actually work. Most of the logic for how to store values in Realm is not
-/// implemented in Swift and there is currently no extension mechanism for
-/// supporting more types.
+/// Directly declaring additional types as conforming to this protocol will not
+/// make them actually work, as most of the logic related to storing types is
+/// not implemented in Swift. Instead, declare types as conforming to
+/// CustomPersistable or FailableCustomPersistable.
 public protocol RealmCollectionValue: Hashable, _RealmSchemaDiscoverable, _ObjcBridgeable {
     /// :nodoc:
     // If we are in key path tracing mode, instantiate an empty object and forward
@@ -1188,7 +1188,7 @@ extension AnyRealmCollection: Encodable where Element: Encodable {}
 
 // MARK: Key Path Strings
 
-/// Tag protocol which allows a collection to produce its property name
+/// Protocol which allows a collection to produce its property name
 internal protocol PropertyNameConvertible {
     /// A mutable array referenced from the enclosing parent that contains the last accessed property names.
     var lastAccessedNames: NSMutableArray? { get set }

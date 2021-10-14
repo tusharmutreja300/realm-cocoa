@@ -300,7 +300,7 @@ extension UUID: _OptionalPersistable, _BuiltInPersistable, _DefaultConstructible
 }
 
 extension AnyRealmValue: _Persistable, _DefaultConstructible {
-    public typealias _RealmValue = AnyRealmValue
+    public typealias PersistedType = AnyRealmValue
 
     @inlinable
     public static func _rlmGetProperty(_ obj: ObjectBase, _ key: PropertyKey) -> AnyRealmValue {
