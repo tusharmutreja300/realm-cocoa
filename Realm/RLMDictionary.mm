@@ -493,6 +493,22 @@ static void changeDictionary(__unsafe_unretained RLMDictionary *const dictionary
     @throw RLMException(@"This method is not available on RLMDictionary.");
 }
 
+- (nullable id)firstObject {
+    @throw RLMException(@"This method is not available on RLMDictionary.");
+}
+
+- (nullable id)lastObject {
+    @throw RLMException(@"This method is not available on RLMDictionary.");
+}
+
+- (nonnull id)objectAtIndexedSubscript:(NSUInteger)index {
+    @throw RLMException(@"This method is not available on RLMDictionary.");
+}
+
+- (nullable NSArray *)objectsAtIndexes:(nonnull NSIndexSet *)indexes {
+    @throw RLMException(@"This method is not available on RLMDictionary.");
+}
+
 #pragma clang diagnostic pop // unused parameter warning
 
 #pragma mark - Thread Confined Protocol Conformance

@@ -30,6 +30,7 @@ x.y.z Release notes (yyyy-MM-dd)
 * `AnyRealmCollection` now conforms to `Encodable`.
 * Greatly improve performance of reading AnyRealmValue and enum types from
   Realm collections.
+* `AnyRealmCollection` now conforms to `Encodable`.
 
 ### Fixed
 
